@@ -36,14 +36,34 @@ Assurez-vous de configurer votre environnement en utilisant un fichier `.env` av
 
 ```env
 # Example .env file
+# IP or host the API listens on ["0.0.0.0"]
+HOST="0.0.0.0"
+# The port Directus will run on [8055]
+PORT=8055
+# The URL where your API can be reached on the web. It is also used for things like OAuth redirects,
+# forgot-password emails, and logos that needs to be publicly available on the internet. ["/"]
+PUBLIC_URL="/"
 
-DIRECTUS_SECRET=your-secret-key
-DB_CLIENT=mysql
-DB_HOST=your-database-host
-DB_PORT=3306
-DB_USER=your-database-user
-DB_PASSWORD=your-database-password
-DB_DATABASE=your-database-name
+## Database
+DB_CLIENT="pg"
+DB_HOST="your-database-host"
+DB_PORT="5432"
+DB_DATABASE="postgres"
+DB_USER="your-database-user"
+DB_PASSWORD="your-database-password"
+DB_SSL="false"
+
+## Supabase Example (location name: Supabase)
+STORAGE_LOCATIONS="supabase"
+STORAGE_SUPABASE_DRIVER="s3"
+STORAGE_SUPABASE_KEY="xxx"
+STORAGE_SUPABASE_SECRET="xxx"
+STORAGE_SUPABASE_ENDPOINT="https://xxx.supabase.co/storage/v1"
+STORAGE_SUPABASE_BUCKET="xxx"
+STORAGE_SUPABASE_REGION="eu-west-1"
+
+### Security
+SECRET="xx"
 ```
 
 ## 🛠️ Développement
